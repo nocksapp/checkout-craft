@@ -1,0 +1,49 @@
+{% from "_includes/forms" import checkboxField, textField, lightswitchField, autosuggestField %}
+
+{% if currency != 'EUR' %}
+    <p class="warning">The nocks gateway only works whith euro!</p>
+{% else %}
+
+    {{ lightswitchField({
+        label: "Test mode?"|t('commerce'),
+        name: 'testMode',
+        on: gateway.testMode,
+        errors: gateway.getErrors('testMode'),
+    }) }}
+
+    {{ autosuggestField({
+        label: 'Access token'|t('commerce'),
+        id: 'accessToken',
+        class: 'ltr',
+        name: 'accessToken',
+        suggestEnvVars: true,
+        value: gateway.accessToken,
+        errors: gateway.getErrors('accessToken')
+    }) }}
+
+    {{ autosuggestField({
+        label: "Merchant Profile UUID"|t('commerce'),
+        id: 'merchant',
+        class: 'ltr',
+        name: 'merchant',
+        suggestEnvVars: true,
+        value: gateway.merchant,
+        errors: gateway.getErrors('merchant')
+    }) }}
+
+    <div class="field">
+        <div class="heading">
+            <label>Payment methods</label>
+        </div>
+    </div>
+    {% for option in gateway.supportedMethods %}
+        {{ checkboxField({
+            label: option.label,
+            id: 'method-'~option.id,
+            name: 'paymentMethods[]',
+            value: option.id,
+            checked: (option.id in gateway.paymentMethods)
+        }) }}
+    {% endfor %}
+
+{% endif %}

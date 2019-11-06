@@ -1,0 +1,37 @@
+{
+  "name": "nocksapp/checkout-craft",
+  "type": "library",
+  "description": "Nocks Payment plugin for craft commerce",
+  "version": "1.0.0",
+  "keywords": [
+    "gateway",
+    "nocks",
+    "bitcoin",
+    "litecoin",
+    "ethereum",
+    "gulden"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Robbie op de Weegh",
+      "email": "robbie@nocks.com"
+    }
+  ],
+  "require": {
+    "craftcms/cms": "^3.1.5",
+    "craftcms/commerce": "^2.0|^3.0",
+    "craftcms/commerce-omnipay": "^2.0.0",
+    "nocksapp/omnipay-nocks": "^2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "nocksapp\\craft\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "commerce-nocks",
+    "name": "Nocks for Craft Commerce",
+    "documentationUrl": "https://github.com/developer/repo/blob/master/README.md"
+  }
+}

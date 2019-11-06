@@ -1,0 +1,13 @@
+<div id="nocks-form">
+    <select name="paymentMethod">
+        {% for method in paymentMethods %}
+        <option value="{{ method.id }}">{{ method.label }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="issuer">
+        {% for issuer in issuers %}
+        <option value="{{ issuer.id }}">{{ issuer.name }}</option>
+        {% endfor %}
+    </select>
+</div>
