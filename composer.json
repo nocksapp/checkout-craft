@@ -32,6 +32,6 @@
   "extra": {
     "handle": "commerce-nocks",
     "name": "Nocks for Craft Commerce",
-    "documentationUrl": "https://github.com/developer/repo/blob/master/README.md"
+    "documentationUrl": "https://github.com/nocksapp/checkout-craft"
   }
 }
