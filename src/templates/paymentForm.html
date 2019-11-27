@@ -5,7 +5,8 @@
         {% endfor %}
     </select>
 
-    <select name="issuer">
+    <select name="issuer" required>
+        <option value="">{{ 'Select your bank'|t('commerce') }}</option>
         {% for issuer in issuers %}
         <option value="{{ issuer.id }}">{{ issuer.name }}</option>
         {% endfor %}
