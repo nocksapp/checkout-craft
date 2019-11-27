@@ -2,7 +2,7 @@
   "name": "nocksapp/checkout-craft",
   "type": "craft-plugin",
   "description": "Nocks Payment plugin for craft commerce",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "gateway",
     "nocks",
